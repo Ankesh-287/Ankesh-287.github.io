@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>Calculator</title>
 </head>
 <body>
 
@@ -15,59 +15,64 @@
         }
         button{
             background-color: aqua;
-            height: 50px;
-            width: 90px;
+            height: 70px;
+            width: 70px;
             border: none;
             font-size: 25px;
-            border-radius: 25px;
+            font-weight: bold;
+            border-radius: 37px;
         }
-        button{
-            background-color: aqua;
-            height: 50px;
-            width: 90px;
+        .o-btn{
+            background-color: rgb(250, 153, 8);
+            height: 70px;
+            width: 70px;
             border: none;
             font-size: 25px;
+            font-weight: bold;
+            border-radius: 37px;
         }
         .total{
             background-color: black;
             color: white;
-            font-size: 25px;
+            font-size: 38px;
             padding-top: 15px;
             padding-bottom: 0px;
             align-content: right;
             height: 50px;
-            width: 370px;
+            width: 295px;
             border: 1px solid white;
         }
-
+        p{
+            margin-left: 200px;
+        }
     </style>
     <p class="total" align="right">
 
     <p>      
-    <button onclick="update('1');">1</button>
-    <button onclick="update('2');">2</button>   
-    <button onclick="update('3');">3</button>
-    <button onclick="update('+');">+</button>
+    <button onclick="update('7');">7</button>
+    <button onclick="update('8');">8</button>
+    <button onclick="update('9');">9</button>
+    <button class="o-btn" onclick="update('+');">+</button>
     </p>
 
     <p>
     <button onclick="update('4');">4</button>
     <button onclick="update('5');">5</button>
     <button onclick="update('6');">6</button>   
-    <button onclick="update('-');">-</button>
+    <button class="o-btn" onclick="update('-');">-</button>
     </p>
 
     <p>
-    <button onclick="update('7');">7</button>
-    <button onclick="update('8');">8</button>
-    <button onclick="update('9');">9</button>
-    <button onclick="update('*');">*</button>
+    <button onclick="update('1');">1</button>
+    <button onclick="update('2');">2</button>   
+    <button onclick="update('3');">3</button>
+    <button class="o-btn" onclick="update('*');">*</button>
     </p>
     
     <p>
     <button onclick="update('0');">0</button>
     <button onclick="update('.');">.</button>
-
+    
     <button onclick="
     calculator = eval(calculator);
     console.log(calculator);
@@ -75,28 +80,24 @@
     localStorage.setItem('calculator',calculator);
     ">=</button>
     
-    <button onclick="update('/');">/</button>
+    <button class="o-btn" onclick="update('/');">/</button>
     </p>
+    
     <p>
-        
     <button onclick="
     calculator = '';
     console.log(calculator);
     total();
-
+    
     localStorage.setItem('calculator', calculator);
     ">Clear</button>
-
-    <!-- <button onclick="
-    calculator = '';
-    total();
-    console.log(`${calculator}`);
-    ">Reset</button>
-    </p> -->
+    </p> 
     
     <script>
         let calculator = localStorage.getItem('calculator') || '';
+        
         total();
+        
         function update(value){
             calculator += value;
             total();
@@ -105,115 +106,10 @@
         }
 
         function total() {
-
             localStorage.setItem('calculator',calculator );
             document.querySelector('.total')
             .innerHTML = `${calculator}`
         }
-
-
-
-        // const name = 'Ankesh';
-        // console.log(name);
-
-        // let coffee = 5;
-        // let tea = 3;
-        // let soup = 9;
-
-        // const cost = coffee + tea + soup;
-        // console.log(`cost of food is : $${cost}`);
-
-        // const tax = cost / 10;
-        // console.log(`your tax is : ${tax}`)
-        
-        // const totalCost = cost + tax;
-        // console.log(`your total cost is : ${totalCost}`)
-    </script>
-
-    <!-- <button onclick="
-    console.log(`Cart Quantity :  ${cartQuantity}`);
-    ">Show Quantity</button>
-
-    <button onclick="
-    //cartQuantity = cartQuantity + 1;
-    cartQuantity += 1;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">Add to cart</button>
-
-    <button onclick="
-    cartQuantity += 2;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">+2</button>
-
-    <button onclick="
-    cartQuantity += 3;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">+3</button>
-
-    <button onclick="
-    cartQuantity += 4;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">+4</button>
-
-    <button onclick="
-    cartQuantity += 5;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">+5</button>
-    <br><br>
-
-    <button onclick="
-    cartQuantity -= 1;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    "> Remove From cart</button>
-
-    <button onclick="
-    cartQuantity -= 2;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">-2</button>
-
-    <button onclick="
-    cartQuantity -= 3;
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">-3</button>
-    <br><br>
-
-    <button onclick="
-    cartQuantity = 0;
-    console.log('Cart was reset');
-    console.log(`Cart Quantity : ${cartQuantity}`);
-    ">Reset cart</button> -->
-
-    
-    <script>
-        // let variable1 = 3;
-    
-        // console.log(variable1);
-
-        // const calculation = 2+2;
-        // console.log(calculation);
-        // console.log(calculation + 2);
-
-        // const result = calculation + 2;
-        // console.log(result);
-
-        // const message = 'ankesh';
-        // console.log(message);
-
-        // variable1 = 5;
-        // console.log(variable1);
-
-        // variable1 = variable1 +1;
-        // console.log(variable1);
-
-        // const variable2 = 5;
-        // var variable3 = 3;
-
-        // console.log(typeof variable1);
-        // console.log(typeof variable2);
-        // console.log(typeof message);
-
-    </script>
-    
-    
+    </script>    
 </body>
 </html>
